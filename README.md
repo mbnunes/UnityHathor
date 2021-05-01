@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://hathor.network"><img width="327" height="140" src="https://miro.medium.com/max/2160/1*_wU--C55wtOHBDPJpy4sKw.jpeg"></a>
-  <a href="htps://unity3d.com"><img width="260" height="140" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Unity3D_Logo.jpg"></a>
+  <a href="https://unity3d.com"><img width="260" height="140" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Unity3D_Logo.jpg"></a>
 </p>
 
 HathorUnity são classes que fazem com que o Unity converse diretamente com a sua [Hathor Wallet Headless](https://github.com/HathorNetwork/hathor-wallet-headless) assim você pode fazer qualquer tipo de transação.
