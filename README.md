@@ -2,8 +2,10 @@
 ### A melhor forma de você usar Hathor e tokens, em seus jogos usando a Unity3D
 
 [![](https://miro.medium.com/max/2160/1*_wU--C55wtOHBDPJpy4sKw.jpeg)](https://hathor.network)                       
-[![|](https://upload.wikimedia.org/wikipedia/commons/5/55/Unity3D_Logo.jpg)](https://hathor.network)
 
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Unity3D_Logo.jpg">
+</p>
 HathorUnity são classes que fazem com que o Unity converse diretamente com a sua [Hathor Wallet Headless](https://github.com/HathorNetwork/hathor-wallet-headless) assim você pode fazer qualquer tipo de transação.
 
 ## Versão da Unity 
