@@ -1,10 +1,12 @@
-# Hathor-UO
-### Item for integration Ultima Online ServUO with hathor headless wallet
+# HathorUnity
+### The best way for you to use Hathor and tokens, in your games using a Unity3D
 
 <p align="center">
-  <a href="https://hathor.network"><img width="327" height="140" src="https://miro.medium.com/max/2160/1*_wU--C55wtOHBDPJpy4sKw.jpeg"></a>  
+  <a href="https://hathor.network"><img width="327" height="140" src="https://miro.medium.com/max/2160/1*_wU--C55wtOHBDPJpy4sKw.jpeg"></a>
+  <a href="https://unity3d.com"><img width="260" height="140" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Unity3D_Logo.jpg"></a>
 </p>
-Hathor-UO is a class that allows Unity to talk directly to your Headless Hathor Wallet, so you can make any kind of transaction
+
+UnityHathor is a class that allows Unity to talk directly to your Headless Hathor Wallet, so you can make any kind of transaction
 
 ## Unity Version 
  - Unity 2020.3.3f1 (64-bit)
