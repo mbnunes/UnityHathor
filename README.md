@@ -59,6 +59,13 @@ if (hathorAmount > 0)
     HathorQueue.transactsQueue.Enqueue(newTransact);                
 }  
 ```
+7 - Go to folder: Assets -> 3DGameKit -> Prefabs -> Characters -> Enemies -> Chomper
+8 - Click on the chomper and in the inspector screen, you will see two fields that will be None: Hathor Count Popoup and Player Object 
+9 - Click on the button to the right of None and choose the Prefab HathorCountPopoup and Ellen respectively
+10 - Change the HathorPlayer.cs script with the wallet id and passphrase of the server wallet, it is the wallet that will have the tokens that will be given to the players
+
+
+
 ## Donations
 
  **Hathor**: HSC2KhChyZfHRLwTAwjc6bqqfebtvsL3xY
