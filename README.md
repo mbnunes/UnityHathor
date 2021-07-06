@@ -69,7 +69,10 @@ if (hathorAmount > 0)
 ## Donations
 
  **Hathor**: HSC2KhChyZfHRLwTAwjc6bqqfebtvsL3xY
+ 
+## Example Installation
 
+[Example]: <https://github.com/mbnunes/UnityHathor/blob/main/EXAMPLE.md>
 
 ## License
 
