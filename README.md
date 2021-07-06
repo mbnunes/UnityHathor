@@ -72,7 +72,7 @@ if (hathorAmount > 0)
  
 ## Example Installation
 
-[Example]: <https://github.com/mbnunes/UnityHathor/blob/main/EXAMPLE.md>
+[Example](https://github.com/mbnunes/UnityHathor/blob/main/EXAMPLE.md)
 
 ## License
 
