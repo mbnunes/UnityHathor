@@ -64,7 +64,9 @@ if (hathorAmount > 0)
 9 - Click on the button to the right of None and choose the Prefab HathorCountPopoup and Ellen respectively
 10 - Change the HathorPlayer.cs script with the wallet id and passphrase of the server wallet, it is the wallet that will have the tokens that will be given to the players
 
+## Hathor in another games or engines
 
+ - [Ultima Online - ServUO](https://github.com/mbnunes/hathor-uo)
 
 ## Donations
 
