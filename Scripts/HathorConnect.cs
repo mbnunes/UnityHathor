@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using UnityEngine.JSONSerializeModule;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
@@ -21,9 +20,6 @@ namespace UnityHathor
         private static string seedKey = "default";
         // passphare do player
         public static string passphrase = "";
-
-        // Wallet que receber� os tokens durante o jogo, local temporario.
-        private static string walletPlayer = "";
 
         //public Text logInputTextValue;
 
@@ -64,7 +60,7 @@ namespace UnityHathor
         {
             UnityWebRequest www = null;
 
-            www = UnityWebRequest.Get("http://localhost:8000/wallet/address-index?address="+token);
+            www = UnityWebRequest.Get("http://localhost:8000/wallet/address-index?address="+address);
 
             www.SetRequestHeader("X-Wallet-Id", login);
 
@@ -138,17 +134,17 @@ namespace UnityHathor
         }
 
         //Return the current address
-        public static IEnumerator GetAddress(string mark_as_used=null, int index=null)
+        public static IEnumerator GetAddress(string mark_as_used=null, int index=0)
         {
             UnityWebRequest www = null;
 
-            if(mark_as_used == null && index == null){
+            if(mark_as_used == null && index == 0){
                 www = UnityWebRequest.Get("http://localhost:8000/wallet/address");
-            } else if(mark_as_used != null && index == null ){
+            } else if(mark_as_used != null && index == 0 ){
                 www = UnityWebRequest.Get("http://localhost:8000/wallet/address?mark_as_used="+mark_as_used);
-            } else if(mark_as_used == null && index != null ){
+            } else if(mark_as_used == null && index != 0 ){
                 www = UnityWebRequest.Get("http://localhost:8000/wallet/address?index="+index.ToString());
-            } else if (mark_as_used != null && index != null) {
+            } else if (mark_as_used != null && index != 0) {
                 www = UnityWebRequest.Get("http://localhost:8000/wallet/address?mark_as_used="+mark_as_used+"&index="+index.ToString());
             }
 
@@ -206,7 +202,7 @@ namespace UnityHathor
 
             WWWForm form = new WWWForm();
             form.AddField("address", _a.Address);
-            form.AddField("value", _a.HathorAmount);
+            form.AddField("value", _a.Amount);
 
             if (_a.Token != null)
                 form.AddField("address", _a.Token);
@@ -287,10 +283,10 @@ namespace UnityHathor
                 form.AddField("address", _a.Address);
             if (_a.ChangeAddress != null)
                 form.AddField("change_address", _a.ChangeAddress);
-            if (_a.CreateMint != null)
-                form.AddField("create_mint", _a.CreateMint);
-            if (_a.CreateMelt != null)
-                form.AddField("create_melt", _a.CreateMelt);
+            if (_a.CreateMint)
+                form.AddField("create_mint", _a.CreateMint.ToString());
+            if (_a.CreateMelt)
+                form.AddField("create_melt", _a.CreateMelt.ToString());
 
             using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:8000/wallet/create-nft", form))
             {
@@ -453,11 +449,11 @@ namespace UnityHathor
         }
 
         // Return the transaction history
-        public static IEnumerator TxHistory(int limit=null)
+        public static IEnumerator TxHistory(int limit=0)
         {
             UnityWebRequest www = null;
 
-            if (limit != null)
+            if (limit != 0)
                 www = UnityWebRequest.Get("http://localhost:8000/wallet/tx-history?limit="+limit.ToString());
             else
                 www = UnityWebRequest.Get("http://localhost:8000/wallet/tx-history");

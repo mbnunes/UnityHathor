@@ -19,7 +19,7 @@ namespace UnityHathor
                 {
                     yield return new WaitForSeconds(.3f);
                     HathorTransactStruct _a = transactsQueue.Dequeue();
-                    StartCoroutine(HathorConnect.SendTxToPlayer(_a));
+                    StartCoroutine(HathorConnect.SimpleSendTxTo(_a));
                 }
                 yield return null;
             }
@@ -35,23 +35,18 @@ namespace UnityHathor
 
     public struct HathorTransactStruct
     {
-        public HathorTransactStruct(string address, int hathorAmount)
-        {
-            Address = address;
-            HathorAmount = hathorAmount;
-        }
-
+        
         // Simple Send Tx - Send a transaction to exactly one output.
-        public HathorTransactStruct(string address, int hathorAmount, string token=null, string change_address=null)
+        public HathorTransactStruct(string address, int amount, string token=null, string change_address=null) : this()
         {
             Address = address;
-            HathorAmount = hathorAmount;
+            Amount = amount;
             Token = token;
             ChangeAddress = change_address;
         }
 
         // Send-Tx - Send a transaction with many outputs.
-        public HathorTransactStruct(Outputs[] outputs, Inputs[] inputs=null, string change_address=null)
+        public HathorTransactStruct(Outputs[] outputs, Inputs[] inputs=null, string change_address=null) : this()
         {
             OutputsArray = outputs;
             InputsArray = inputs;
@@ -59,7 +54,7 @@ namespace UnityHathor
         }
 
         // Create a token.
-        public HathorTransactStruct(string name, string symbol, int amount, string address=null, string change_address=null)
+        public HathorTransactStruct(string name, string symbol, int amount, string address=null, string change_address=null) : this()
         {
             Name = name;
             Symbol = symbol;
@@ -69,23 +64,23 @@ namespace UnityHathor
         }
 
         // Mint tokens.
-        public HathorTransactStruct(string token, int amount)
+        public HathorTransactStruct(string token, int amount) : this()
         {
             Token = token;
             Amount = amount;
         }
 
         // Melt tokens.
-        public HathorTransactStruct(string token, string address, int amount, string change_address=null)
+        public HathorTransactStruct(string token, string address, int amount, string change_address=null) : this()
         {
             Token = token;
-            Add = symbol;
+            Address = address;
             Amount = amount;
             ChangeAddress = change_address;
         }
 
         // Create NFT
-        public HathorTransactStruct(string name, string symbol, int amount, string data, string address=null, string change_address=null, bool create_mint=null, bool create_melt=null)
+        public HathorTransactStruct(string name, string symbol, int amount, string data, string address=null, string change_address=null, bool create_mint=false, bool create_melt=false) : this()
         {
             Name = name;
             Symbol = symbol;
@@ -99,14 +94,13 @@ namespace UnityHathor
 
         public string Name { get; }
         public string Symbol { get; }
-        public string Amount { get; }
+        public int Amount { get; }
         public string Data { get; }
         public string Token { get; }
         public string ChangeAddress { get; }
         public bool CreateMint { get; }
         public bool CreateMelt { get; }
-        public string Address { get; }
-        public int HathorAmount { get; }
+        public string Address { get; }        
         public Outputs[] OutputsArray { get; }
         public Inputs[] InputsArray { get; }
 
