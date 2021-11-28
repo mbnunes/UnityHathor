@@ -205,7 +205,7 @@ namespace UnityHathor
             form.AddField("value", _a.Amount);
 
             if (_a.Token != null)
-                form.AddField("address", _a.Token);
+                form.AddField("token", _a.Token);
             if (_a.ChangeAddress != null)
                 form.AddField("change_address", _a.ChangeAddress);
 
